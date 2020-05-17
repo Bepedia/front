@@ -1,9 +1,10 @@
 {
-  "name": "bepedia",
-  "short_name": "bepedia",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Bépédia",
+  "short_name": "Bépédia",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "display": "standalone",
+  "orientation": "portrait",
   "scope": "./",
   "start_url": "./",
   "icons": [
@@ -55,5 +56,6 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
-  ]
+  ],
+  "splash_pages": null
 }
