@@ -2,3 +2,25 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+main {
+  height: calc(100vh - 64px);
+
+  @media screen and (max-width: 599px) {
+    height: calc(100vh - 56px);
+  }
+}
+
+.fab-add-button {
+  position: fixed !important;
+  bottom: 20px;
+  right: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}

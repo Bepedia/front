@@ -1,0 +1,36 @@
+<main fxLayout="column" fxLayoutAlign="start center">
+  <h1>Créer une {{nameMapping[collection]}}</h1>
+
+  <mat-form-field class="full-width">
+    <mat-label>Titre</mat-label>
+    <input matInput [(ngModel)]="model.title">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="model.description"></textarea>
+  </mat-form-field>
+
+  <div *ngIf="collection !== 'betise'" fxLayout="row" class="full-width" fxLayoutAlign="space-between center">
+    <button mat-raised-button color="primary" (click)="triggerFile()">Image</button>
+    <mat-form-field>
+      <mat-label></mat-label>
+      <input matInput [disabled]="true" [(ngModel)]="fileName">
+    </mat-form-field>
+  </div>
+
+  <div fxLayoutAlign="center center" fxLayout="row">
+    <button mat-raised-button color="primary" (click)="id ? update() : create()">
+      Sauvegarder
+    </button>
+  </div>
+
+</main>
+
+<input type="file"
+       [multiple]="false"
+       id="fileInput"
+       class="hidden"
+       ngModel
+       accept="image/*"
+       (ngModelChange)="chargeFile()" />

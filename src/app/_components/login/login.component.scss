@@ -1,0 +1,13 @@
+main {
+  background: url("/assets/img/login-bg.jpg") no-repeat center center;
+  background-size: cover;
+
+  mat-card {
+    width: 75%;
+    height: 40vh;
+
+    mat-card-content {
+      height: 50%;
+    }
+  }
+}

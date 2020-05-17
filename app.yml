@@ -1,0 +1,18 @@
+service: default
+runtime: nodejs12
+
+handlers:
+  - url: /favicon\.ico
+    static_files: dist/bepedia/favicon.ico
+    upload: dist/bepedia/favicon\.ico
+
+  - url: /(.*\..*$)
+    static_files: dist/bepedia/\1
+    upload: dist/bepedia/(.*\..*$)
+
+  - url: /.*
+    secure: always
+    redirect_http_response_code: 301
+    static_files: dist/bepedia/index.html
+    upload: dist/bepedia/index\.html
+

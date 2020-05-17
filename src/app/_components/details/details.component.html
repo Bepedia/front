@@ -1,0 +1,39 @@
+<main>
+  <div *ngIf="data">
+    <h1>{{data.title}}</h1>
+
+    <img [src]="data.img_url" class="details-img" alt="{{data.title}} img" />
+
+    <h3 class="description">{{data.description}}</h3>
+    <h3>Par {{data.author}} le {{data.creation_date | date: 'd/MM/yyyy'}}</h3>
+  </div>
+
+
+  <mat-list *ngIf="data">
+    <div mat-subheader>Commentaires</div>
+    <mat-list-item *ngFor="let comment of data.comments; let i = index;">
+      <mat-icon mat-list-icon>comment</mat-icon>
+      <div mat-line>{{comment.comment}}</div>
+      <div mat-line>Par {{comment.author}} <br/> Le {{comment.creation_date | date: 'd/MM/yyyy'}} </div>
+      <button mat-icon-button (click)="deleteComment(i)" *ngIf="currentEmail === comment.author">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <button *ngIf="!openCommentForm" mat-fab color="primary" (click)="openCommentForm = true; commentModel = '';">
+      <mat-icon>add</mat-icon>
+    </button>
+    <div *ngIf="openCommentForm" class="full-width">
+      <mat-form-field class="full-width">
+        <mat-label>Commentaire</mat-label>
+        <textarea matInput [(ngModel)]="commentModel"></textarea>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <button mat-button (click)="openCommentForm = false">Annuler</button>
+        <button mat-button (click)="postComment()">Poster</button>
+      </div>
+    </div>
+
+  </div>
+</main>

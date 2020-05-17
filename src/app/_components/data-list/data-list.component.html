@@ -1,0 +1,24 @@
+<main>
+  <mat-list>
+    <div mat-subheader>{{nameMapping[collection]}}</div>
+    <mat-list-item *ngFor="let item of dataList">
+      <mat-icon mat-list-icon [routerLink]="'/' + collection +'/details/' + item.id">face</mat-icon>
+      <div mat-line [routerLink]="'/' + collection +'/details/' + item.id">{{item.title}}</div>
+      <div mat-line [routerLink]="'/' + collection +'/details/' + item.id"> Par {{item.author}} </div>
+      <button mat-icon-button [routerLink]="'/' + collection + '/form/' + item.id" *ngIf="item.author === email">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="delete(item.id)" *ngIf="item.author === email">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</main>
+
+<button mat-fab
+        *ngIf="email"
+        class="fab-add-button"
+        color="primary"
+        [routerLink]="'/' + collection + '/form'">
+  <mat-icon>add</mat-icon>
+</button>
