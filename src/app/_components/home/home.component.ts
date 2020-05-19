@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CardInfo} from "../../_models/card-info";
+import {MobileLoaderService} from "../../_services/mobile-loader.service";
 
 @Component({
   selector: 'app-home',
@@ -26,12 +27,21 @@ export class HomeComponent implements OnInit {
       description: 'Les plats et desserts les plus savoureux',
       img: '/assets/img/recette-card-img.jpg',
       link: 'recette'
+    },
+    {
+      title: 'Galerie',
+      description: 'Les plus belles photos de Pyro',
+      img: '/assets/img/galerie-card-img.jpeg',
+      link: 'galerie'
     }
   ]
 
-  constructor() { }
+  constructor(
+    private mobileLoaderService: MobileLoaderService
+  ) { }
 
   ngOnInit(): void {
+    this.mobileLoaderService.loading.next(false);
   }
 
 }

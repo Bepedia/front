@@ -1,0 +1,13 @@
+<main>
+  <ngx-masonry [options]="masonryOptions">
+    <div ngxMasonryItem *ngFor="let picture of masonryItems" (click)="openImage(picture)">
+      <img [src]="picture.url" width="100%">
+    </div>
+  </ngx-masonry>
+</main>
+
+<button mat-fab color="primary" (click)="triggerInput()" class="add-img">
+  <mat-icon>add</mat-icon>
+</button>
+
+<input type="file" class="hidden" accept="image/*" id="fileInput" ngModel (ngModelChange)="modelChange()" />

@@ -1,0 +1,22 @@
+ngx-masonry {
+  width: 95vw;
+  margin: 0 auto;
+
+  .delete-button {
+    white-space: initial;
+  }
+
+  & > div {
+    width: 49%;
+
+    @media screen and (max-width: 599px) {
+      width: 45%;
+    }
+  }
+}
+
+.add-img {
+  position: fixed !important;
+  bottom: 20px;
+  right: 20px;
+}

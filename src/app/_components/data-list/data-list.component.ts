@@ -17,7 +17,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class DataListComponent implements OnInit {
 
-  dataList: Betise[] | Couture[] | Recette[] = null;
+  dataList: Betise[] | Couture[] | Recette[] | any = null;
   collection = null;
   nameMapping = {
     betise: 'Bêtise',

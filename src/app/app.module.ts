@@ -24,6 +24,9 @@ import { ConfirmComponent } from './_dialogs/confirm/confirm.component';
 import { CollectionFormComponent } from './_components/collection-form/collection-form.component';
 import { DataListComponent } from './_components/data-list/data-list.component';
 import { UnauthorizedComponent } from './_components/unauthorized/unauthorized.component';
+import { GalerieComponent } from './_components/galerie/galerie.component';
+import {NgxMasonryModule} from "ngx-masonry";
+import { GalerieImgComponent } from './_dialogs/galerie-img/galerie-img.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { UnauthorizedComponent } from './_components/unauthorized/unauthorized.c
     ConfirmComponent,
     CollectionFormComponent,
     DataListComponent,
-    UnauthorizedComponent
+    UnauthorizedComponent,
+    GalerieComponent,
+    GalerieImgComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,8 @@ import { UnauthorizedComponent } from './_components/unauthorized/unauthorized.c
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMasonryModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiHttpInterceptor, multi: true },

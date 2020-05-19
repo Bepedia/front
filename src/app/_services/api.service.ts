@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Betise} from "../_models/betise";
 import {map} from "rxjs/operators";
 import {Recette} from "../_models/recette";
 import {Couture} from "../_models/couture";
+import {Galerie} from "../_models/galerie";
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,10 @@ export class ApiService {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+  }
 
-  list(resource): Observable<Betise[] | Couture[] | Recette[]> {
+  list(resource): Observable<Betise[] | Couture[] | Recette[] | Galerie[]> {
     return this.http.get(`/${resource}`).pipe(map((res: Betise[] | Couture[] | Recette[]) => res));
   }
 
@@ -36,9 +38,15 @@ export class ApiService {
     return this.http.delete(`/${resource}/${id}`);
   }
 
-  addImg(id, image: File, resource): Observable<Betise | Couture | Recette> {
+  addImg(id = null, image: File, resource): Observable<Betise | Couture | Recette | Galerie> {
     const formData = new FormData();
     formData.append('file', image, image.name);
-    return this.http.post(`/${resource}/${id}/image`, formData).pipe(map((res: Betise | Couture | Recette) => res));
+    if (id) {
+      return this.http.post(`/${resource}/${id}/image`, formData).pipe(map((res: Betise | Couture | Recette) => res));
+    } else {
+      return this.http.post(`/${resource}/image`, formData).pipe(map((res: Galerie) => res));
+    }
   }
+
+
 }

@@ -7,11 +7,13 @@ import {DetailsComponent} from "./_components/details/details.component";
 import {CollectionFormComponent} from "./_components/collection-form/collection-form.component";
 import {DataListComponent} from "./_components/data-list/data-list.component";
 import {UnauthorizedComponent} from "./_components/unauthorized/unauthorized.component";
+import {GalerieComponent} from "./_components/galerie/galerie.component";
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
+  {path: 'galerie', component: GalerieComponent},
   {path: 'unauthorized', component: UnauthorizedComponent},
   {path: ':collection', component: DataListComponent, canActivate: [AuthGuard]},
   {path: ':collection/form', component: CollectionFormComponent, canActivate: [AuthGuard]},

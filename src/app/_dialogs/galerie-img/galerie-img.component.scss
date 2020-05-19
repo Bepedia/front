@@ -1,0 +1,12 @@
+img {
+  width: 100%;
+}
+
+::ng-deep.galerie-panel ::ng-deep mat-dialog-container {
+  padding: 0 !important;
+}
+
+button {
+  position: absolute;
+  right: 10vw;
+}
