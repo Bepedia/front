@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../_services/api.service";
 import {Galerie} from "../../_models/galerie";
 import {NgxMasonryOptions} from "ngx-masonry";
@@ -26,7 +26,8 @@ export class GalerieComponent implements OnInit {
     private mobileLoaderService: MobileLoaderService,
     private snackBar: MatSnackBar,
     private dialog: MatDialog
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.apiService.list('galerie').subscribe((galeries: Galerie[]) => {
@@ -41,16 +42,23 @@ export class GalerieComponent implements OnInit {
 
   modelChange() {
     this.mobileLoaderService.loading.next(true);
-    const file = (<HTMLInputElement>document.getElementById('fileInput')).files[0];
-    this.apiService.addImg(null, file, 'galerie').subscribe((img: Galerie) => {
-      this.masonryItems.push(img);
-      this.snackBar.open('Photo ajoutée', 'Fermer', {duration: 2000});
+    const qArray = [];
+    const files = (<HTMLInputElement>document.getElementById('fileInput')).files;
+    for (let i = 0; i < files.length; i++) {
+      qArray.push(new Promise(resolve => {
+        this.apiService.addImg(null, files[i], 'galerie').subscribe((img: Galerie) => {
+          this.masonryItems.push(img);
+          resolve();
+        });
+      }))
+    }
+    Promise.all(qArray).then(() => {
+      this.snackBar.open('Photos ajoutées', 'Fermer', {duration: 2000});
       this.mobileLoaderService.loading.next(false);
-    });
+    })
   }
 
   openImage(img) {
-    console.log('img', img);
     this.dialog.open(GalerieImgComponent, {
       data: img,
       panelClass: 'galerie-panel'
@@ -63,7 +71,6 @@ export class GalerieComponent implements OnInit {
       }
     })
   }
-
 
 
 }

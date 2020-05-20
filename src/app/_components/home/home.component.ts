@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     },
     {
       title: 'Galerie',
-      description: 'Les plus belles photos de Pyro',
+      description: 'Les plus belles photos de Pyro et les autres',
       img: '/assets/img/galerie-card-img.jpeg',
       link: 'galerie'
     }
