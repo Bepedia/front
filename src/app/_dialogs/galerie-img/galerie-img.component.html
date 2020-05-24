@@ -1,4 +1,9 @@
-<img [src]="data.url" />
+<img *ngIf="!data.url.includes('.mp4')" [src]="data.url" />
+<video controls *ngIf="data.url.includes('.mp4')">
+  <source [src]="data.url"
+          type="video/mp4">
+</video>
+
 
 <button mat-mini-fab color="primary" (click)="delete()">
   <mat-icon>delete</mat-icon>

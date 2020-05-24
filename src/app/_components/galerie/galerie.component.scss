@@ -6,6 +6,10 @@ ngx-masonry {
     white-space: initial;
   }
 
+  video {
+    max-height: 100px;
+  }
+
   & > div {
     width: 49%;
 
