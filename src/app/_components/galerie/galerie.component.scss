@@ -2,6 +2,10 @@ ngx-masonry {
   width: 95vw;
   margin: 0 auto;
 
+  @media screen and (min-width: 600px) {
+    width: 70vw;
+  }
+
   .delete-button {
     white-space: initial;
   }
@@ -15,6 +19,7 @@ ngx-masonry {
 
     @media screen and (max-width: 599px) {
       width: 45%;
+      margin-left: 5px;
     }
   }
 }

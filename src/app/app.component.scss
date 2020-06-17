@@ -1,6 +1,10 @@
 mat-drawer {
   width: 50vw;
 
+  @media screen and (min-width: 600px) {
+    width: 20vw;
+  }
+
   .sub-drawer {
     padding: 16px 0;
   }

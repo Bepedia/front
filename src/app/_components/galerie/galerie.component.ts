@@ -61,6 +61,7 @@ export class GalerieComponent implements OnInit {
   openImage(img) {
     this.dialog.open(GalerieImgComponent, {
       data: img,
+      width: '500px',
       panelClass: 'galerie-panel'
     }).afterClosed().subscribe(deleted => {
       if (deleted) {

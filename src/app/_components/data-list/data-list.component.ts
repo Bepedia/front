@@ -35,13 +35,28 @@ export class DataListComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
+    this.mobileLoaderService.loading.next(true);
     this.route.params.subscribe(params => {
       this.collection = params['collection'];
       this.apiService.list(this.collection).subscribe((list) => {
+        list.sort(this.compare)
         this.dataList = list;
         this.mobileLoaderService.loading.next(false);
       })
     });
+  }
+
+  compare(a, b) {
+    const titleA = a.title.toUpperCase();
+    const titleB = b.title.toUpperCase();
+
+    let comparison = 0;
+    if (titleA > titleB) {
+      comparison = 1;
+    } else if (titleA < titleB) {
+      comparison = -1;
+    }
+    return comparison;
   }
 
   delete(id) {

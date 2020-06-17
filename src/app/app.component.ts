@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MobileLoaderService} from "./_services/mobile-loader.service";
 import {AuthService} from "./_services/auth.service";
+import {MobileService} from "./_services/mobile.service";
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,13 @@ export class AppComponent {
 
   constructor(
     private mobileLoaderService: MobileLoaderService,
-    private authService: AuthService
+    private authService: AuthService,
+    private mobileService: MobileService
   ) {
+  }
+
+  get isMobile() {
+    return this.mobileService.isMobile;
   }
 
   get loading() {

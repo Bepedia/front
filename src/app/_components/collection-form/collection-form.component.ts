@@ -42,6 +42,7 @@ export class CollectionFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.mobileLoaderService.loading.next(true);
     this.route.params.subscribe(params => {
       this.collection = params['collection'];
       this.id = params['id'];
@@ -49,9 +50,11 @@ export class CollectionFormComponent implements OnInit {
         this.apiService.get(this.id, this.collection).subscribe(res => {
           this.model.title = res.title;
           this.model.description = res.description;
+          this.mobileLoaderService.loading.next(false);
         });
+      } else {
+        this.mobileLoaderService.loading.next(false);
       }
-      this.mobileLoaderService.loading.next(false);
     });
   }
 
@@ -86,7 +89,7 @@ export class CollectionFormComponent implements OnInit {
       }
       this.snackBar.open(`${this.nameMapping[this.collection]} mis à jour`, 'Fermer', {duration: 2000});
       this.mobileLoaderService.loading.next(false);
-      // await this.router.navigate([this.collection]);
+      await this.router.navigate([this.collection]);
     });
   }
 
