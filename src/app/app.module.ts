@@ -27,6 +27,9 @@ import { UnauthorizedComponent } from './_components/unauthorized/unauthorized.c
 import { GalerieComponent } from './_components/galerie/galerie.component';
 import {NgxMasonryModule} from "ngx-masonry";
 import { GalerieImgComponent } from './_dialogs/galerie-img/galerie-img.component';
+import { NendoroidsComponent } from './_components/nendoroids-home/nendoroids/nendoroids.component';
+import { NendoroidsHomeComponent } from './_components/nendoroids-home/nendoroids-home.component';
+import { OwnedComponent } from './_components/nendoroids-home/owned/owned.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { GalerieImgComponent } from './_dialogs/galerie-img/galerie-img.componen
     DataListComponent,
     UnauthorizedComponent,
     GalerieComponent,
-    GalerieImgComponent
+    GalerieImgComponent,
+    NendoroidsComponent,
+    NendoroidsHomeComponent,
+    OwnedComponent
   ],
   imports: [
     BrowserModule,

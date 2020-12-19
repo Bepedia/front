@@ -6,6 +6,7 @@ import {map} from "rxjs/operators";
 import {Recette} from "../_models/recette";
 import {Couture} from "../_models/couture";
 import {Galerie} from "../_models/galerie";
+import {Nendoroid} from "../_models/nendoroid";
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +49,12 @@ export class ApiService {
     }
   }
 
+  search(resource: string, search: string) {
+    return this.http.get(`/${resource}/search?q=${search}`);
+  }
+
+  getNendoroidsOwned() {
+    return this.http.get('/nendoroids/owned');
+  }
 
 }

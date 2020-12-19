@@ -33,6 +33,12 @@ export class HomeComponent implements OnInit {
       description: 'Les plus belles photos de Pyro et les autres',
       img: '/assets/img/galerie-card-img.jpeg',
       link: 'galerie'
+    },
+    {
+      title: 'Nendoroids',
+      description: 'Notre collection de Nendoroids',
+      img: '/assets/img/nendoroids-card-img.jpg',
+      link: 'nendoroids'
     }
   ]
 

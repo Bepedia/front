@@ -1,0 +1,18 @@
+mat-form-field {
+  margin-top: 15px;
+  width: calc(100% - 30px);
+  padding: 0 15px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+
+  mat-card {
+    margin: 20px;
+  }
+}
+
+.charge-more-container {
+  text-align: center;
+}

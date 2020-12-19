@@ -12,6 +12,8 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatDividerModule} from "@angular/material/divider";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 const modules = [
@@ -27,7 +29,9 @@ const modules = [
   MatProgressBarModule,
   MatDialogModule,
   MatSnackBarModule,
-  MatDividerModule
+  MatDividerModule,
+  MatCheckboxModule,
+  MatTabsModule
 ];
 
 

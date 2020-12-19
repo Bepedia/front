@@ -1,0 +1,16 @@
+<main>
+  <div class="refresh-container">
+    <button mat-icon-button mat-raised-button (click)="refresh(true)">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </div>
+  <mat-list>
+    <div mat-subheader>Liste des Nendoroids possédées ({{list.length}}/{{totalNumberOfNendoroids}})</div>
+    <mat-list-item *ngFor="let n of list">
+      <img (click)="openDetails(n)" [src]="n.img" mat-list-icon />
+      <div mat-line>{{n.name}}</div>
+      <div mat-line> #{{n.id}} </div>
+      <mat-icon (click)="removeFromOwned(n)">delete</mat-icon>
+    </mat-list-item>
+  </mat-list>
+</main>
