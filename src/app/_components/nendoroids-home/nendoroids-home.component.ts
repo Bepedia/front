@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MobileLoaderService} from "../../_services/mobile-loader.service";
 
 @Component({
   selector: 'app-nendoroids-home',

@@ -17,6 +17,7 @@ export class NendoroidsComponent implements OnInit, AfterViewInit {
   searchModel = '';
   $subscription: Subscription = null;
   numberOfElements = 0;
+  view = 'list';
 
   constructor(
     private loadingService: MobileLoaderService,
@@ -29,6 +30,7 @@ export class NendoroidsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.loadingService.loading.next(true);
     this.apiService.list('nendoroids').subscribe((nendoroids: Nendoroid[]) => {
       nendoroids.sort(this.sortNendoroids);
       this.nendoroids = nendoroids;

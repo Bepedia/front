@@ -1,12 +1,22 @@
 <main>
 
+  <mat-button-toggle-group [(ngModel)]="view" name="style" aria-label="style">
+    <mat-button-toggle value="list">
+      <mat-icon>list</mat-icon>
+    </mat-button-toggle>
+
+    <mat-button-toggle value="card">
+      <mat-icon>view_module</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+
   <mat-form-field>
     <mat-label>Search</mat-label>
     <input (ngModelChange)="search($event)" type="text" matInput [(ngModel)]="searchModel">
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
 
-  <div class="cards-container">
+  <div class="cards-container" *ngIf="view === 'card'">
 
     <mat-card *ngFor="let n of sortedList">
       <mat-card-header>
@@ -19,6 +29,22 @@
         <mat-checkbox (ngModelChange)="markAsOwned(n)" [(ngModel)]="n.owned">{{n.owned ? 'Possédé !' : 'Possédé ?'}}</mat-checkbox>
       </mat-card-actions>
     </mat-card>
+
+  </div>
+
+  <div class="list-container" *ngIf="view === 'list'">
+
+    <mat-list>
+      <mat-list-item *ngFor="let n of sortedList">
+        <img [src]="n.img" mat-list-icon />
+        <div mat-line class="name-row">{{n.name}}</div>
+        <div mat-line> #{{n.id}} </div>
+        <button mat-icon-button (click)="moreInfo(n)">
+          <mat-icon>info</mat-icon>
+        </button>
+        <mat-checkbox (ngModelChange)="markAsOwned(n)" [(ngModel)]="n.owned"></mat-checkbox>
+      </mat-list-item>
+    </mat-list>
 
   </div>
 

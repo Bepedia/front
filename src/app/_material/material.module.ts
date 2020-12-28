@@ -14,6 +14,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatTabsModule} from "@angular/material/tabs";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 
 const modules = [
@@ -31,7 +32,8 @@ const modules = [
   MatSnackBarModule,
   MatDividerModule,
   MatCheckboxModule,
-  MatTabsModule
+  MatTabsModule,
+  MatButtonToggleModule
 ];
 
 
