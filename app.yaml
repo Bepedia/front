@@ -3,11 +3,11 @@ instance_class: F1
 
 handlers:
   - url: /(.*\.(png|ico|jpg|json|js|svg))$
-    static_files: dist/\1
-    upload: dist/.*\.(png|ico|jpg|json|js|svg)$
+    static_files: \1
+    upload: .*\.(png|ico|jpg|json|js|svg)$
     secure: always
 
   - url: .*
-    static_files: dist/index.html
-    upload: dist/index.html
+    static_files: index.html
+    upload: index.html
     secure: always
