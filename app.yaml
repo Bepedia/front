@@ -1,0 +1,14 @@
+runtime: nodejs12
+
+handlers:
+  - url: /
+    static_files: index.html
+    upload: index.html
+    secure: always
+  - url: /(.*)
+    static_files: \1
+    upload: (.*)
+    secure: always
+
+env_variables:
+  HOST: '0.0.0.0'
