@@ -27,6 +27,8 @@ jobs:
 
       - run: npm run generate
 
+      - run: cp app.yaml dispatch.yaml dist/
+
       - name: Initialize Google Cloud SDK
         uses: zxyle/publish-gae-action@master
         with:
@@ -39,4 +41,4 @@ jobs:
           # This client-secret.json is converted by GCP_SA_KEY.
           gcloud auth activate-service-account ${{ secrets.GCP_SA_EMAIL }} --key-file=client-secret.json
           gcloud config set project ${{ secrets.PROJECT_ID }}
-          gcloud -q app deploy app.yaml dispatch.yaml --promote
+          gcloud -q app deploy dist/app.yaml dist/dispatch.yaml --promote
