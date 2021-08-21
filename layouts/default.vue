@@ -73,34 +73,34 @@ export default {
   background: linear-gradient(
     rgba(0, 0, 0, 0.7),
     rgba(0, 0, 0, 0.7)
-  ), url("/collection-background.jpeg");
+  ), url("/backgrounds/collection-background.jpeg");
 }
 
 .item {
   background: linear-gradient(
     rgba(0, 0, 0, 0.7),
     rgba(0, 0, 0, 0.7)
-  ), url("/collection-item-background.jpeg");
+  ), url("/backgrounds/collection-item-background.jpeg");
 }
 
 .homepage {
   background: linear-gradient(
     rgba(0, 0, 0, 0.7),
     rgba(0, 0, 0, 0.7)
-  ), url("/homepage-background.jpeg");
+  ), url("/backgrounds/homepage-background.jpeg");
 }
 
 .nendoroids {
   background: linear-gradient(
     rgba(0, 0, 0, 0.7),
     rgba(0, 0, 0, 0.7)
-  ), url("/nendoroids-background.jpeg");
+  ), url("/backgrounds/nendoroids-background.jpeg");
 }
 
 .cartons {
   background: linear-gradient(
     rgba(0, 0, 0, 0.7),
     rgba(0, 0, 0, 0.7)
-  ), url("/cartons-background.jpeg");
+  ), url("/backgrounds/cartons-background.jpeg");
 }
 </style>
