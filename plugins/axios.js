@@ -3,7 +3,7 @@ import axios from 'axios'
 
 axios.interceptors.request.use((config) => {
   if (config.url.startsWith('/')) {
-    config.url = process.env.API_URL + config.url
+    config.url = process.env.VUE_APP_API_URL + config.url
   }
   if (process.env.NODE_ENV === 'local') {
     config.headers['x-goog-authenticated-user-email'] = process.env.VUE_APP_IAP_USER
