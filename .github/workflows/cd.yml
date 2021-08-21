@@ -18,10 +18,10 @@ jobs:
 
       - run: npm install
 
-      - run: 'echo "$ENV" > .env'
+      - run: 'echo "$ENV_PROD" > .env'
         shell: bash
         env:
-          ENV_PROD: ${{secrets.ENV}}
+          ENV_PROD: ${{secrets.ENV_PROD}}
 
       - run: npm run build
 
