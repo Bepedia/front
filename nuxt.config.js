@@ -7,6 +7,11 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  generate: {
+    fallback: false,
+    routes: ['/', '/recette', '/carton', '/betise', '/couture']
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Bepedia',
