@@ -1,14 +1,13 @@
-runtime: nodejs12
+runtime: nodejs10
+instance_class: F1
 
 handlers:
-  - url: /
-    static_files: index.html
-    upload: index.html
-    secure: always
-  - url: /(.*)
-    static_files: \1
-    upload: (.*)
+  - url: /(.*\.(png|ico|jpg|json|js|svg))$
+    static_files: dist/\1
+    upload: dist/.*\.(png|ico|jpg|json|js|svg)$
     secure: always
 
-env_variables:
-  HOST: '0.0.0.0'
+  - url: .*
+    static_files: dist/index.html
+    upload: dist/index.html
+    secure: always
