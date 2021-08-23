@@ -1,6 +1,3 @@
-export const state = ({
-
-});
 
 export const actions = {
   getNendoroids(state, search) {
