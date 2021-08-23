@@ -3,13 +3,14 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
+  mode: 'spa',
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   generate: {
     fallback: false,
-    routes: ['/', '/recette', '/couture', '/betise', '/cartons'],
+    routes: ['/nendoroids', '/cartons', '/recette', '/couture', '/betise'],
     crawler: true
   },
 
