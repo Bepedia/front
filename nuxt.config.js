@@ -63,7 +63,14 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
+      lang: 'en',
+      name: 'Bepedia',
+      enabled: true
+    },
+    meta: {
+      mobileApp: true,
+      name: 'Bepedia',
+      theme_color: 'black'
     }
   },
 
