@@ -8,9 +8,9 @@ export default {
   target: 'static',
 
   generate: {
-    // fallback: false,
-    // routes: ['/', '/cartons']
-    fallback: "index.html"
+    fallback: false,
+    routes: ['/', '/recette', '/couture', '/betise', '/cartons'],
+    crawler: true
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
