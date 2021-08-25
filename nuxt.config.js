@@ -5,8 +5,14 @@ export default {
   ssr: false,
 
   generate: {
-    routes: ['/', '/_collection']
+    routes() {
+      return new Promise(resolve => resolve()).then(() => {
+        return ['/recette', '/nendoroids', '/cartons', '/couture', '/betise'];
+      })
+    }
   },
+
+  target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
