@@ -5,7 +5,7 @@ export default {
   ssr: false,
 
   generate: {
-    fallback: '404.html'
+    routes: ['/', '/_collection']
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
