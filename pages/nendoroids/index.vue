@@ -94,6 +94,7 @@ export default {
   },
   watch: {
     owned(value) {
+      this.search.q = '';
       this.runSearch();
     },
     q(value) {
