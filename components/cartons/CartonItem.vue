@@ -10,13 +10,13 @@
     </v-list-item-avatar>
 
     <v-list-item-content>
-      <v-list-item-title v-text="item.name"></v-list-item-title>
+      <v-list-item-title @click="moveToCarton(item)" v-text="item.name"></v-list-item-title>
 
-      <v-list-item-subtitle v-text="item.nbItems + ' objet(s)'"></v-list-item-subtitle>
+      <v-list-item-subtitle @click="moveToCarton(item)" v-text="item.nbItems + ' objet(s)'"></v-list-item-subtitle>
     </v-list-item-content>
 
     <v-list-item-action>
-      <v-btn icon :to="`/cartons/${item.id}`">
+      <v-btn icon @click="moveToCarton(item)">
         <v-icon color="grey lighten-1">mdi-information-outline</v-icon>
       </v-btn>
       <v-btn icon @click="confirmDialog = true">
@@ -47,6 +47,9 @@ export default {
     }
   },
   methods: {
+    moveToCarton(item) {
+      this.$router.push(`/cartons/${item.id}`);
+    },
     deleteComment(confirm) {
       if (!confirm) {
         return;

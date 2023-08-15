@@ -9,7 +9,7 @@
 
 
     <v-card
-      class="mx-auto my-12"
+      class="mx-auto card"
     >
       <div>
         <h2 v-if="!model.id">Créer {{ collection }}</h2>
@@ -171,6 +171,10 @@ export default {
 
 h2 {
   padding: 15px;
+}
+
+.card {
+  margin-bottom: 64px;
 }
 
 </style>

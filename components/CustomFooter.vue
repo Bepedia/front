@@ -35,11 +35,11 @@ export default {
           return;
         }
         const position = element.getBoundingClientRect();
-        /*document.getElementById("footer").scrollTo({
+        document.getElementById("footer").scrollTo({
           top: position.top,
-          left: position.left - 20,
+          left: position.left,
           behavior: "smooth"
-        })*/
+        });
       })
     }
   },

@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-main :class="classes" class="main">
+    <v-main class="main">
       <CustomHeader class="header" />
 
       <v-container>
@@ -48,11 +48,7 @@ export default {
 <style>
 
 .header {
-  position: fixed;
-  top: 15px;
-  left: 0;
   width: 100%;
-  z-index: 0;
 }
 
 .footer {
@@ -64,43 +60,9 @@ export default {
 }
 
 .main {
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
+  display: flex;
+  flex-direction: column;
+  
 }
 
-.collection {
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)
-  ), url("/backgrounds/collection-background.jpeg");
-}
-
-.item {
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)
-  ), url("/backgrounds/collection-item-background.jpeg");
-}
-
-.homepage {
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)
-  ), url("/backgrounds/homepage-background.jpeg");
-}
-
-.nendoroids {
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)
-  ), url("/backgrounds/nendoroids-background.jpeg");
-}
-
-.cartons {
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)
-  ), url("/backgrounds/cartons-background.jpeg");
-}
 </style>

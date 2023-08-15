@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="mx-auto my-12"
+    class="mx-auto card"
   >
 
     <v-list-item two-line>
@@ -102,6 +102,10 @@ export default {
 </script>
 
 <style scoped>
+
+.card {
+  margin-bottom: 64px;
+}
 
 .titles {
   display: flex;

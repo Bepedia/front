@@ -116,7 +116,7 @@ export default {
     },
     debounceSearch: _.debounce(function (e) {
       this.runSearch();
-    }, 500),
+    }, 800),
     updateNendoroid(item) {
       this.loading = true;
       this.$store.dispatch('nendoroids/updateNendoroid', item).then(() => {
@@ -146,6 +146,7 @@ export default {
         payload['owned'] = this.owned;
       }
       this.$store.dispatch('nendoroids/getNendoroids', payload).then(nendoroids => {
+        this.nendoroids = []; 
         this.nendoroids = nendoroids.data;
         this.loading = false;
       });
@@ -157,7 +158,6 @@ export default {
 <style scoped>
 
 .main-container {
-  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;

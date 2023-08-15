@@ -85,11 +85,11 @@ h1 {
 .main-container {
   z-index: 1;
   padding-bottom: 90px;
+  width: 100%;
 }
 
 .collection-header {
   padding: 0 20px;
-  margin-top: 65vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

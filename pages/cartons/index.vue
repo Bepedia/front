@@ -89,10 +89,6 @@ export default {
 
 <style scoped>
 
-.card-container {
-  margin-top: 60vh;
-}
-
 .add-button-container {
   width: 100%;
   display: flex;

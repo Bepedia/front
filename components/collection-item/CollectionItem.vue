@@ -8,7 +8,7 @@
 
     <v-card
       v-if="!loading"
-      class="mx-auto my-12"
+      class="mx-auto card"
     >
 
       <v-img
@@ -195,6 +195,10 @@ export default {
 
 .item-description {
   white-space: break-spaces;
+}
+
+.card {
+  margin-bottom: 64px;
 }
 
 </style>

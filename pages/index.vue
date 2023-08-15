@@ -41,7 +41,6 @@ export default {
 <style scoped>
 
 .list-container {
-  margin-top: 65vh;
   display: flex;
   flex-direction: column;
 }
