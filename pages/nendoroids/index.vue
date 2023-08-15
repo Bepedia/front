@@ -124,6 +124,12 @@ export default {
         this.loading = false;
         this.updateMessage = item.owned ? 'Nendoroid ajoutée !' : 'Nendoroid retirée...';
         this.updated = true;
+        if (this.owned && !item.owned) {
+          const idx = this.nendoroids.findIndex(i => i.id === item.id);
+          if (idx > -1) {
+            this.nendoroids.splice(idx, 1);
+          }
+        }
         setTimeout(() => {
           this.updated = false;
         }, 2000);
